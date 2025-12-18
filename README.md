@@ -17,7 +17,7 @@ The analysis uses the SyriaTel Customer Churn dataset, which contains 3,333 cust
 The dataset is imbalanced, with approximately 14.5% of customers having churned. This imbalance makes recall a particularly important evaluation metric, as failing to identify churners can result in missed retention opportunities.
 
 ### Customer Churn Distribution
-![Customer Churn Distribution](image-1.png)
+![Customer Churn Distribution](images/image-1.png)
 
 ---
 
@@ -27,7 +27,8 @@ Exploratory analysis focused on identifying customer behaviors associated with i
 Customers who made three or more customer service calls were significantly more likely to churn, suggesting that unresolved issues and poor service experiences are key drivers of customer attrition. This insight highlights an opportunity for early intervention through improved support and escalation processes.
 
 ### Churn Rate by Number of Customer Service Calls
-![alt text](image-2.png)
+![Churn Rate by Service Calls](images/image-2.png)
+
 ---
 
 ## Modeling Approach
@@ -43,10 +44,10 @@ To capture non-linear relationships in customer behavior, a decision tree classi
 Models were evaluated on the test dataset using classification metrics, confusion matrices, and ROC-AUC scores. Because the business goal is to identify customers at risk of churning, recall was prioritized as the primary evaluation metric. The baseline logistic regression model performed well at identifying non-churners but had low recall for churned customers. The tuned decision tree improved performance substantially, achieving approximately 62% recall on the test data. ROC-AUC results also showed that the decision tree slightly outperformed logistic regression in distinguishing between churners and non-churners.
 
 ### Confusion Matrix for Final Decision Tree Model
-![alt text](image-3.png)
+![Confusion Matrix](images/image-3.png)
 
 ### ROC Curve Comparison
-![alt text](image-4.png)
+![ROC Curve](images/image-4.png)
 
 ---
 
@@ -63,6 +64,4 @@ Additionally, customers with high usage patterns may benefit from tailored prici
 ---
 
 ## Limitations and Next Steps
-This analysis is limited to historical service usage and customer interaction data and does not account for external factors such as competitor pricing or customer satisfaction surveys. Class imbalance may also impact predictions for minority churn cases.
-
-Future work could include incorporating additional customer attributes, applying ensemble models, and implementing cross-validation to further improve model robustness and generalizability.
+This analysis is limited to historical service usage and customer interaction data and does not account for external factors such as competitor pricing or customer satisfaction surveys. Class imbalance may also impact predictions for minority churn cases. Future work could include incorporating additional customer attributes, applying ensemble models, and implementing cross-validation to further improve model robustness and generalizability.
