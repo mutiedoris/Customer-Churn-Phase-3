@@ -17,7 +17,7 @@ The analysis uses the SyriaTel Customer Churn dataset, which contains 3,333 cust
 The dataset is imbalanced, with approximately 14.5% of customers having churned. This imbalance makes recall a particularly important evaluation metric, as failing to identify churners can result in missed retention opportunities.
 
 ### Customer Churn Distribution
-![alt text](image-1.png)
+![Customer Churn Distribution](image-1.png)
 
 ---
 
