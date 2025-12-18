@@ -1,19 +1,11 @@
-# Customer-Churn-Phase-3
-Customer analytics and prediction project
-
-# Telecom Customer Churn Prediction – SyriaTel
-
+# SyriaTel Customer Churn Prediction
 ## Overview
-Customer churn presents a significant revenue and growth challenge for telecommunications companies. This project focuses on predicting customer churn at SyriaTel using supervised machine learning. By identifying customers who are likely to leave, the company can take proactive retention actions that reduce revenue loss and improve customer satisfaction.
-
-The goal of this analysis is not only to build an accurate predictive model, but also to translate model outputs into actionable business insights that support decision-making.
+Customer churn presents a significant revenue and growth challenge for telecommunications companies. This project focuses on predicting customer churn at SyriaTel using supervised machine learning. By identifying customers who are likely to leave, the company can take proactive retention actions that reduce revenue loss and improve customer satisfaction. The goal of this analysis is not only to build an accurate predictive model, but also to translate model outputs into actionable business insights that support decision-making.
 
 ---
 
 ## Business Understanding
-In a highly competitive telecom market, retaining existing customers is far more cost-effective than acquiring new ones. When customers churn, SyriaTel loses future revenue and must incur additional marketing and acquisition costs to replace them.
-
-Customer churn is influenced by multiple interacting factors such as service usage patterns, subscription plans, and customer service experience. Because these relationships are complex and non-linear, a machine learning classification approach is well suited to identifying customers at risk of leaving before churn occurs.
+In a highly competitive telecom market, retaining existing customers is far more cost-effective than acquiring new ones. When customers churn, SyriaTel loses future revenue and must incur additional marketing and acquisition costs to replace them. Customer churn is influenced by multiple interacting factors such as service usage patterns, subscription plans, and customer service experience. Because these relationships are complex and non-linear, a machine learning classification approach is well suited to identifying customers at risk of leaving before churn occurs.
 
 This project frames churn prediction as a binary classification problem, where the business priority is correctly identifying churn-prone customers early enough to intervene.
 
@@ -24,7 +16,7 @@ The analysis uses the SyriaTel Customer Churn dataset, which contains 3,333 cust
 
 The dataset is imbalanced, with approximately 14.5% of customers having churned. This imbalance makes recall a particularly important evaluation metric, as failing to identify churners can result in missed retention opportunities.
 
-📊 **Insert Visualization:** *Customer Churn Distribution*
+### Customer Churn Distribution
 ![alt text](image-1.png)
 
 ---
@@ -34,7 +26,7 @@ Exploratory analysis focused on identifying customer behaviors associated with i
 
 Customers who made three or more customer service calls were significantly more likely to churn, suggesting that unresolved issues and poor service experiences are key drivers of customer attrition. This insight highlights an opportunity for early intervention through improved support and escalation processes.
 
-📊 **Insert Visualization:** *Churn Rate by Number of Customer Service Calls*
+### Churn Rate by Number of Customer Service Calls
 ![alt text](image-2.png)
 ---
 
@@ -48,17 +40,18 @@ To capture non-linear relationships in customer behavior, a decision tree classi
 ---
 
 ## Model Evaluation
-Models were evaluated using classification metrics, confusion matrices, and ROC-AUC scores. Recall was prioritized because the cost of missing a churn-prone customer is higher than incorrectly flagging a non-churner. The tuned decision tree achieved the best balance between recall and overall performance. It consistently outperformed the baseline logistic regression in identifying churned customers and demonstrated strong discriminatory ability based on ROC-AUC scores.
+Models were evaluated on the test dataset using classification metrics, confusion matrices, and ROC-AUC scores. Because the business goal is to identify customers at risk of churning, recall was prioritized as the primary evaluation metric. The baseline logistic regression model performed well at identifying non-churners but had low recall for churned customers. The tuned decision tree improved performance substantially, achieving approximately 62% recall on the test data. ROC-AUC results also showed that the decision tree slightly outperformed logistic regression in distinguishing between churners and non-churners.
 
-📊 **Insert Visualization:** *Confusion Matrix for Final Decision Tree Model*  
+### Confusion Matrix for Final Decision Tree Model
 ![alt text](image-3.png)
-📊 **Insert Visualization:** *ROC Curve Comparison*
+
+### ROC Curve Comparison
 ![alt text](image-4.png)
 
 ---
 
 ## Final Model Selection
-The tuned decision tree classifier was selected as the final model. Its ability to model non-linear relationships and achieve higher recall makes it well suited for proactive churn prevention. While less interpretable than logistic regression, the performance gains justify its use as a decision-support tool.
+The tuned decision tree classifier was selected as the final model due to its improved recall of approximately 62% on the test data and its ability to capture non-linear patterns in customer behavior. Because the primary business objective is to identify customers at risk of churning before they leave, prioritizing recall makes this model more suitable for proactive retention strategies despite its lower interpretability compared to logistic regression.
 
 ---
 
